@@ -1,0 +1,46 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-danger mb-4">Are you sure to delete this Employee</h1>
+
+<form asp-action="Create">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label class="col-form-label">Name</label>
+        <input class="form-control" asp-for="Name" type="text" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Age</label>
+        <input class="form-control" asp-for="Age" type="number" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Email</label>
+        <input class="form-control" asp-for="Email" type="email" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Address</label>
+        <input class="form-control" asp-for="Address" type="text" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Phone Number</label>
+        <input class="form-control" asp-for="PhoneNumber" type="number" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Salary</label>
+        <input class="form-control" asp-for="Salaey" type="number" readonly />
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label">Haire Date</label>
+        <input class="form-control" asp-for="HairDate" type="date" readonly />
+    </div>
+
+    <input type="submit" value="submit" class="btn btn-primary" />
+    <a class="btn btn-light" asp-action="Index">Back To List</a>
+
+    <input hidden asp-for="ImageName"/>
+
+</form>
+

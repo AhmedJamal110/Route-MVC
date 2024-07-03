@@ -1,0 +1,59 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="mt-4">Edit User</h1>
+
+<form asp-action="Edit">
+
+    <div class="form-group">
+        <label class="col-form-label">First Name</label>
+        <input class="form-control" asp-for="Fname" type="text" />
+        <span class="text-danger" asp-validation-for="Fname"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-form-label">Last Name</label>
+        <input class="form-control" asp-for="LName" type="text" />
+        <span class="text-danger" asp-validation-for="LName"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label">Email</label>
+        <input class="form-control" asp-for="Email" type="number" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Phone Number</label>
+        <input class="form-control" asp-for="PhoneNumber" type="email" />
+        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Roles</label>
+        <input class="form-control" asp-for="Roles" type="text" />
+        <span class="text-danger" asp-validation-for="Roles"></span>
+    </div>
+    
+
+@*     <form asp-action="Create">
+        <partial name="PartialView/CreateEditEmployeePartialView" />
+
+        <input type="submit" value="submit" class="btn btn-primary" />
+        <a class="btn btn-light" asp-action="Index">Back To List</a>
+    </form>
+ *@
+
+    <input type="submit" value="submit" class="btn btn-primary" />
+    <a class="btn btn-light" asp-action="Index">Back To List</a>
+</form>
+
+
+@section ValidationScript
+{
+    <partial name="_ValidationScriptsPartial" />
+
+}
+

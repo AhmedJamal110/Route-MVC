@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="d-flex justify-content-between align-items-center">
+
+    <h1>All Departments</h1>
+    <a class="btn btn-primary" asp-action="Create">Add New Department</a>
+
+    </div>
+
+@if(Model.Count()> 0)
+{
+    <table class="table table-striped table-hover mt-3">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor( D => D.Code)</td>
+                <td>@Html.DisplayNameFor(D => D.Name)</td>
+                <td>Date Of Ceation</td>
+                <td>Details</td>
+                <td>Update</td>
+                <td>Delete</td>
+            
+            </tr>
+        </thead>
+            
+        <tbody>
+            @foreach (var department in Model)
+            {
+                <tr>
+                    <td>@department.Code</td>
+                    <td>@department.Name</td>
+                    <td>@department.DateOfCreation</td>
+                   <partial name="_ButtonPartialView" model="department.Id.ToString()" />
+                </tr>
+
+            }    
+
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-danger mt-4">
+        <h2 class="text-danger">There Are No Departments</h2>
+    </div>
+}

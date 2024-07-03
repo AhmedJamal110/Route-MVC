@@ -1,0 +1,53 @@
+﻿@model EmployeeViewModel
+
+@inject IDepartmentRepository  deprtRepo
+@{
+    var departments = new SelectList(await deprtRepo.GetAll(), "Id", "Name");
+}
+<div class="form-group">
+    <label class="col-form-label">Name</label>
+    <input class="form-control" asp-for="Name" type="text" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Age</label>
+    <input class="form-control" asp-for="Age" type="number" />
+    <span class="text-danger" asp-validation-for="Age"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Email</label>
+    <input class="form-control" asp-for="Email" type="email" />
+    <span class="text-danger" asp-validation-for="Email"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Address</label>
+    <input class="form-control" asp-for="Address" type="text" />
+    <span class="text-danger" asp-validation-for="Address"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Phone Number</label>
+    <input class="form-control" asp-for="PhoneNumber" type="number" />
+    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Salary</label>
+    <input class="form-control" asp-for="Salaey" type="number" />
+    <span class="text-danger" asp-validation-for="Salaey"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label">Haire Date</label>
+    <input class="form-control" asp-for="HairDate" type="date" />
+    <span class="text-danger" asp-validation-for="HairDate"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label">Haire Date</label>
+    <select class="form-control" asp-items="departments" asp-for="departmentId">
+        <option value="@null">-- Select Department --</option>
+    </select>
+
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="Image"></label>
+    <input class="form-control" asp-for="Image" />
+</div>
